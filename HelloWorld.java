@@ -1,9 +1,12 @@
-public class HelloWorld {
+package com.example;
 
-    public static void main(String[] args) {
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-        // Prints "Hello, World" in the terminal window.
-        System.out.println("Hello, Kranthi new World");
+public class HelloLambda implements RequestHandler<String, String> {
+
+    @Override
+    public String handleRequest(String input, Context context) {
+        return "Hello from Jenkins Lambda!";
     }
-
 }
